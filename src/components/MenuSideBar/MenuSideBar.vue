@@ -1,47 +1,35 @@
 <template>
 	<nav class="side-menu">
 		<router-link class="router-link" to="/">
-			<HomeIcon />
+			<i class="fa-solid fa-house"></i>
 			<span>Início</span>
 		</router-link>
 		<router-link class="router-link" to="/limitador">
-			<LimiterIcon />
+			<i class="fa-solid fa-sliders"></i>
 			<span>Limitador</span>
 		</router-link>
 
 		<router-link class="router-link" to="/distribuir">
-			<DistributeIcon />
+			<i class="fa-solid fa-diagram-project"></i>
 			<span>Distribuir</span>
 		</router-link>
 
 		<router-link class="router-link" to="/relatorio">
-			<ReportIcon />
+			<i class="fa-solid fa-file-invoice"></i>
 			<span>Relatório</span>
 		</router-link>
 
 		<router-link class="router-link" to="/redistribuir">
-			<RedistributeIcon />
+			<i class="fa-solid fa-circle-nodes"></i>
 			<span>Redistribuir</span>
 		</router-link>
 	</nav>
 </template>
 
 <script>
-	import HomeIcon from "@/components/Icons/HomeIcon.vue";
-	import LimiterIcon from "@/components/Icons/LimiterIcon.vue";
-	import DistributeIcon from "@/components/Icons/DistributeIcon.vue";
-	import ReportIcon from "@/components/Icons/ReportIcon.vue";
-	import RedistributeIcon from "@/components/Icons/RedistributeIcon.vue";
-
 	export default {
 		name: "MenuSideBar",
-		components: {
-			HomeIcon,
-			LimiterIcon,
-			DistributeIcon,
-			ReportIcon,
-			RedistributeIcon,
-		}
+		components: {},
 	};
 </script>
 
@@ -59,23 +47,22 @@
 		text-align: center;
 		padding-top: 25px;
 		z-index: 999;
-		.router-link{
+		.router-link {
 			display: block;
 			text-decoration: none;
 			color: white;
 			margin: 0 0 30px;
 			transition: 0.3s;
-			&:hover{
-				color: #37BCBC;
+			&:hover {
+				color: #37bcbc;
 			}
-			&.router-link-exact-active{
-				color: #37BCBC;
+			&.router-link-exact-active {
+				color: #37bcbc;
 			}
-			span{
+			span {
 				display: block;
 				margin: 7px 0 0;
 			}
 		}
 	}
-	
 </style>
