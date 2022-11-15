@@ -127,7 +127,6 @@
 <style scoped lang="less">
 	main {
 		padding-top: 100px;
-		padding-left: 32px;
 		font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 400;
 		max-height: 100vh;

@@ -1,57 +1,56 @@
 <template>
 	<section>
 		<HeaderComponent />
-		<main>
-			<section>
-				<div>
-					<h2>Criar limitador</h2>
-					<div class="distribution-area">
-						<p class="title-area">Área de distribuição</p>
-						<select name="distribuicao" id="distribution">
-							<option value="valor1">Valor 1</option>
-							<option value="valor2" selected>Valor 2</option>
-							<option value="valor3">Valor 3</option>
-						</select>
+
+		<main class="view">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<h2>Criar limitador</h2>
+						<div class="distribution-area">
+							<p class="title-area">Área de distribuição</p>
+							<select name="distribuicao" id="distribution">
+								<option value="valor1">Valor 1</option>
+								<option value="valor2" selected>Valor 2</option>
+								<option value="valor3">Valor 3</option>
+							</select>
+						</div>
+						<div class="distribution-cut">
+							<p class="title-cut">Corte e distribuição</p>
+							<p class="advise">Favor preencher apenas uma opção</p>
+							<div class="distribution-inputs">
+								<input type="text" />
+								<p>% da média mensal</p>
+							</div>
+							<div class="distribution-inputs">
+								<input type="text" />
+								<p>Número de processos</p>
+							</div>
+							<button class="limiter-save">Salvar Limitador</button>
+						</div>
 					</div>
-					<div class="distribution-cut">
-						<p class="title-cut">Corte e distribuição</p>
-						<p class="advise">Favor preencher apenas uma opção</p>
-						<div class="distribution-inputs">
-							<input type="text" />
-							<p>% da média mensal</p>
+
+					<div class="col-6">
+						<h2>Limitadores em uso</h2>
+						<div class="row itens">
+							<div class="col-4 title">Nome</div>
+							<div class="col-4 title">Vara/Grupo</div>
 						</div>
-						<div class="distribution-inputs">
-							<input type="text" />
-							<p>Número de processos</p>
+
+						<div class="list">
+							<div class="row itens" v-for="(processo, index) in processos" :key="index">
+								<div class="col-4">{{ processo.quantidade }}</div>
+								<div class="col-4">{{ processo.categoria }}</div>
+								<div class="col-2"></div>
+								<div class="col-1">del</div>
+								<div class="col-1">edit</div>
+							</div>
 						</div>
-						<button class="limiter-save">Salvar Limitador</button>
+
+						
 					</div>
 				</div>
-				<div class="limiter">
-					<h2>Limitadores em uso</h2>
-					<div class="titles">
-						<h3>Corte e distribuição</h3>
-						<h3 class="area-title">Área de distribuição</h3>
-					</div>
-					<v-divider></v-divider>
-					<v-divider></v-divider>
-					<div>
-						<ul v-for="(processo, index) in processos" :key="index">
-							<li>
-								<div class="proccess-itens">
-									<span>{{ processo.quantidade }}</span>
-									<span>{{ processo.categoria }}</span>
-								</div>
-								<div class="tools">
-									<button class="delete">del</button>
-									<button class="edit">edi</button>
-								</div>
-							</li>
-							<v-divider></v-divider>
-						</ul>
-					</div>
-				</div>
-			</section>
+			</div>
 		</main>
 	</section>
 </template>
@@ -62,15 +61,15 @@
 			return {
 				processos: [
 					{
-						quantidade: "50 Processos",
+						quantidade: "Limitador 01",
 						categoria: "Cível",
 					},
 					{
-						quantidade: "50% da média mensal",
+						quantidade: "Limitador 02",
 						categoria: "Família",
 					},
 					{
-						quantidade: "25% da média mensal",
+						quantidade: "Limitador 03",
 						categoria: "Criminal",
 					},
 				],
@@ -82,22 +81,38 @@
 		},
 	};
 </script>
-<style scoped>
+<style scoped lang="less">
 	main {
-		padding-top: 80px;
+		padding-top: 100px;
 		font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 400;
-		min-height: 100vh;
+		max-height: 100vh;
+		h2 {
+			font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+			font-size: 24px;
+			font-weight: 600;
+			margin: 0 0 11px;
+		}
+		.itens{
+			.title{
+				font-weight: 600;
+				margin: 0 0 5px;
+			}
+		}
+		.list{
+			overflow-y: auto;
+			max-height:60vh;
+			.itens{
+				width: 100%;
+				position: relative;
+				margin: 0;
+				border-bottom: 1px solid #cecece;
+				padding: 10px 0;
+				font-size: 15px;
+			}
+		}
 	}
 
-	section {
-		display: flex;
-	}
-
-	h2 {
-		font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-		font-weight: 400;
-	}
 
 	.title-area:before,
 	.title-cut:before {
@@ -112,7 +127,7 @@
 	#distribution {
 		border: 1px solid #afafaf;
 		padding: 0px 8px;
-		width: 578.5px;
+		width: 100%;
 		height: 36px;
 		margin-top: 10px;
 	}
@@ -142,7 +157,7 @@
 
 	.limiter-save {
 		margin-top: 10px;
-		width: 578.5px;
+		width: 100%;
 		height: 40px;
 		background: #333333;
 		padding: 8px 20px;
