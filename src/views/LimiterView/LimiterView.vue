@@ -84,11 +84,10 @@
 </script>
 <style scoped>
 	main {
-		padding-top: 120px;
-		padding-left: 32px;
+		padding-top: 80px;
 		font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 400;
-		max-height: 100vh;
+		min-height: 100vh;
 	}
 
 	section {

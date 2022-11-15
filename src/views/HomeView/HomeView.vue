@@ -1,7 +1,14 @@
 <template>
 	<section>
 		<HeaderComponent />
-		<main>
+		<main class="view">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						teste
+					</div>
+				</div>
+			</div>
 			<h2>Limitadores em uso</h2>
 			<v-divider></v-divider>
 			<v-divider></v-divider>
