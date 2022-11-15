@@ -5,6 +5,7 @@ import LimiterView from "../views/LimiterView/LimiterView.vue";
 import DistributeView from "../views/DistributeView/DistributeView.vue";
 import ReportView from "../views/ReportView/ReportView.vue";
 import RedistributeView from "../views/RedistributeView/RedistributeView.vue";
+import TesteView from "../views/TesteView/TesteView.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
 		path: "/redistribuir",
 		name: "Redistribute",
 		component: RedistributeView,
+	},
+	{
+		path: "/teste",
+		name: "TesteView",
+		component: TesteView,
 	},
 ];
 

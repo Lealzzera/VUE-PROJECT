@@ -21,10 +21,20 @@ export default {
   }),
 }
 </script>
-<style>
+<style lang="less">
   body, ul, li, h1, h2, p {
     padding: 0px;
     margin: 0px;
+  }
+
+  .view{
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    .container{
+      max-width: 1040px !important;
+    }
   }
 
   ul {
@@ -34,9 +44,6 @@ export default {
   body {
     font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
   }
-
-  #app {
-    display: flex;
-  }
+  @import'~bootstrap/dist/css/bootstrap.css';
 
 </style>

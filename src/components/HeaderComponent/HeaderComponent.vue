@@ -1,13 +1,18 @@
 <template>
 	<header>
-		<div class="header-left">
-			<span>Seja bem-vindo ao SISCONT</span>
-            <InputComponent />
-		</div>
-		<div>
-			<button class="engrenagem">
-				<img src="@/assets/engrenagem-icon.svg" alt="engrenagem" />
-			</button>
+		<div class="container">
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-3"><span>Seja bem-vindo ao SISCONT</span></div>
+				<div class="col-3"><InputComponent /></div>
+				<div class="col-3"></div>
+				<div class="col-1"></div>
+				<div class="col-1">
+					<button class="engrenagem">
+						<img src="@/assets/engrenagem-icon.svg" alt="engrenagem" />
+					</button>
+				</div>
+			</div>
 		</div>
 	</header>
 </template>
@@ -20,30 +25,30 @@ import InputComponent from '@/components/InputComponent/InputComponent.vue';
         }
 	};
 </script>
-<style scoped>
+<style scoped lang="less">
 	header {
 		background: #dadac5;
+		position: absolute;
+		top: 0;
+		left: 0;
 		height: 64px;
-		width: 100vw;
+		width: 100%;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		position: fixed;
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
         font-size: 14px;
+		.container{
+			padding-top: 16px;
+			padding-bottom: 16px;
+			span{
+				font-size: 14px;
+				line-height: 33px;
+				display: block;
+			}
+			.col-1{
+				text-align: right;
+				padding: 5px 0;
+			}
+		}
 	}
 
-	.engrenagem {
-		margin-left: 496px;
-	}
-    .header-left {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: -119px;
-    }
-
-    span {
-        margin-right: 40px;
-    }
+  @import'~bootstrap/dist/css/bootstrap.css';
 </style>

@@ -1,41 +1,69 @@
 <template>
 	<section>
 		<HeaderComponent />
-		<main>
-			<h2>Limitadores em uso</h2>
-			<v-divider></v-divider>
-			<v-divider></v-divider>
-			<div class="list-distribution">
-				<div class="proccess-item">
-					<span class="proccess-quantity">50 processos</span>
-					<span class="category">Cível</span>
+
+		<main class="view">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<div class="limiter">
+							<h2>Limitadores em uso</h2>
+
+							<div class="list-distribution">
+								<div class="proccess-item">
+									<span class="proccess-quantity">50 processos</span>
+									<span class="category">Cível</span>
+								</div>
+
+								<div class="proccess-item">
+									<span class="proccess-quantity">30% da média mensal</span>
+									<span class="category">Família</span>
+								</div>
+
+								<div class="proccess-item">
+									<span class="proccess-quantity">50 processos</span>
+									<span class="category">Cível</span>
+								</div>
+					
+								<div class="proccess-item">
+									<span class="proccess-quantity">50 processos</span>
+									<span class="category">Cível</span>
+								</div>
+						
+								<div class="proccess-item">
+									<span class="proccess-quantity">50 processos</span>
+									<span class="category">Cível</span>
+								</div>
+						
+								<div class="proccess-item">
+									<span class="proccess-quantity">25% da média mensal</span>
+									<span class="category">Criminal</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6"></div>
 				</div>
-				<v-divider></v-divider>
-				<div class="proccess-item">
-					<span class="proccess-quantity">30% da média mensal</span>
-					<span class="category">Família</span>
-				</div>
-				<v-divider></v-divider>
-				<div class="proccess-item">
-					<span class="proccess-quantity">50 processos</span>
-					<span class="category">Cível</span>
-				</div>
-				<v-divider></v-divider>
-				<div class="proccess-item">
-					<span class="proccess-quantity">50 processos</span>
-					<span class="category">Cível</span>
-				</div>
-				<v-divider></v-divider>
-				<div class="proccess-item">
-					<span class="proccess-quantity">50 processos</span>
-					<span class="category">Cível</span>
-				</div>
-				<v-divider></v-divider>
-				<div class="proccess-item">
-					<span class="proccess-quantity">25% da média mensal</span>
-					<span class="category">Criminal</span>
+
+				<div class="row">
+					<div class="col-6">
+						<div class="distribution"></div>
+					</div>
+					<div class="col-6"></div>
 				</div>
 			</div>
+
+
+
+
+			
+			<h2>Limitadores em uso</h2>
+	
+			
+
+
+
+
 			<v-divider></v-divider>
 			<h2 class="distribuition">Distribuições recentes</h2>
 			<v-divider></v-divider>

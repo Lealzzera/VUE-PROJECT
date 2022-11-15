@@ -1,45 +1,28 @@
 <template>
 	<nav class="side-menu">
-		<div class="menu-option">
-			<router-link class="router-link" to="/">
-				<button class="button-menu">
-					<HomeIcon />
-					Início
-				</button>
-			</router-link>
-		</div>
-		<div class="menu-option">
-			<router-link class="router-link" to="/limitador">
-				<button class="button-menu">
-					<LimiterIcon />
-					Limitador
-				</button>
-			</router-link>
-		</div>
-		<div class="menu-option">
-			<router-link class="router-link" to="/distribuir">
-				<button class="button-menu">
-					<DistributeIcon />
-					Distribuir
-				</button>
-			</router-link>
-		</div>
-		<div class="menu-option">
-			<router-link class="router-link" to="/relatorio">
-				<button class="button-menu">
-					<ReportIcon />
-					Relatório
-				</button>
-			</router-link>
-		</div>
-		<div class="menu-option">
-			<router-link class="router-link" to="/redistribuir">
-				<button class="button-menu">
-					<RedistributeIcon />
-					Redistribuir
-				</button>
-			</router-link>
-		</div>
+		<router-link class="router-link" to="/">
+			<HomeIcon />
+			<span>Início</span>
+		</router-link>
+		<router-link class="router-link" to="/limitador">
+			<LimiterIcon />
+			<span>Limitador</span>
+		</router-link>
+
+		<router-link class="router-link" to="/distribuir">
+			<DistributeIcon />
+			<span>Distribuir</span>
+		</router-link>
+
+		<router-link class="router-link" to="/relatorio">
+			<ReportIcon />
+			<span>Relatório</span>
+		</router-link>
+
+		<router-link class="router-link" to="/redistribuir">
+			<RedistributeIcon />
+			<span>Redistribuir</span>
+		</router-link>
 	</nav>
 </template>
 
@@ -62,34 +45,37 @@
 	};
 </script>
 
-<style scoped>
+<style scoped lang="less">
 	.side-menu {
 		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 		background: #333333;
-		display: flex;
-		flex-direction: column;
+		position: absolute;
+		display: block;
+		left: 0;
+		top: 0;
 		width: 97px;
 		height: 100vh;
 		text-decoration: none;
-		align-items: center;
+		text-align: center;
 		padding-top: 25px;
+		z-index: 999;
+		.router-link{
+			display: block;
+			text-decoration: none;
+			color: white;
+			margin: 0 0 30px;
+			transition: 0.3s;
+			&:hover{
+				color: #37BCBC;
+			}
+			&.router-link-exact-active{
+				color: #37BCBC;
+			}
+			span{
+				display: block;
+				margin: 7px 0 0;
+			}
+		}
 	}
-
-	.menu-option {
-		cursor: pointer;
-		padding-bottom: 35px;
-		text-decoration: none;
-	}
-
-	.router-link {
-		text-decoration: none;
-		color: white;
-	}
-
-	.button-menu {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	}
+	
 </style>

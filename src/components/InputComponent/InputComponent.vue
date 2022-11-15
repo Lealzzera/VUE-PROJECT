@@ -23,7 +23,7 @@
 
 	button {
 		position: absolute;
-		top: 0;
+		top: -4px;
 		margin-top: 24px;
 		margin-left: -34px;
 	}
