@@ -42,7 +42,7 @@
 		left: 0;
 		top: 0;
 		width: 97px;
-		height: 100vh;
+		min-height: 100vh;
 		text-decoration: none;
 		text-align: center;
 		padding-top: 25px;
