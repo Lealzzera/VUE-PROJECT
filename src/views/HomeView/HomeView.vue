@@ -27,7 +27,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-7">
 						<div class="limiter">
@@ -50,8 +49,15 @@
 									<div class="col-4 category">
 										{{ categoria }}
 									</div>
+
 									<div class="col-3"></div>
-									<div class="col-1"></div>
+									<div class="col-1">
+										<button>
+											<i
+												class="fa-solid fa-magnifying-glass"
+											></i>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
