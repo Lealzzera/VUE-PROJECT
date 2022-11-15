@@ -26,5 +26,6 @@
 		top: -4px;
 		margin-top: 24px;
 		margin-left: -34px;
+		cursor: pointer;
 	}
 </style>
