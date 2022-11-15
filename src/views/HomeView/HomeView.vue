@@ -9,44 +9,17 @@
 						<div class="limiter">
 							<h2>Limitadores em uso</h2>
 							<div class="list">
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Família</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Cível</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Família</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Cível</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Família</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Cível</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Família</div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-6 process">50 processos</div>
-									<div class="col-6 category">Cível</div>
+								<div
+									class="row itens"
+									v-for="(processo, key) in processos"
+									:key="key"
+								>
+									<div class="col-6 process">
+										{{ processo.quantidadeProcessos }}
+									</div>
+									<div class="col-6 category">
+										{{ processo.categoria }}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -62,48 +35,20 @@
 								<div class="col-4 title">Classificação</div>
 							</div>
 							<div class="list">
-								<div class="row itens">
-									<div class="col-4 process">50 processos</div>
-									<div class="col-4 category">Cível</div>
+								<div
+									class="row itens"
+									v-for="(processo, key) in distribuidos"
+									:key="key"
+								>
+									<div class="col-4 process">
+										{{ processo.processos }}
+									</div>
+									<div class="col-4 category">
+										{{ processo.categoria }}
+									</div>
 									<div class="col-3"></div>
 									<div class="col-1"></div>
 								</div>
-
-								<div class="row itens">
-									<div class="col-4 process">50 processos</div>
-									<div class="col-4 category">Cível</div>
-									<div class="col-3"></div>
-									<div class="col-1"></div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-4 process">50 processos</div>
-									<div class="col-4 category">Cível</div>
-									<div class="col-3"></div>
-									<div class="col-1"></div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-4 process">50 processos</div>
-									<div class="col-4 category">Cível</div>
-									<div class="col-3"></div>
-									<div class="col-1"></div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-4 process">50 processos</div>
-									<div class="col-4 category">Cível</div>
-									<div class="col-3"></div>
-									<div class="col-1"></div>
-								</div>
-
-								<div class="row itens">
-									<div class="col-4 process">50 processos</div>
-									<div class="col-4 category">Cível</div>
-									<div class="col-3"></div>
-									<div class="col-1"></div>
-								</div>
-
 							</div>
 						</div>
 					</div>
@@ -117,6 +62,50 @@
 	import HeaderComponent from "@/components/HeaderComponent/HeaderComponent.vue";
 
 	export default {
+		data() {
+			return {
+				processos: [
+					{
+						quantidadeProcessos: "50 processos",
+						categoria: "Cívil",
+					},
+					{
+						quantidadeProcessos: "20 processos",
+						categoria: "Família",
+					},
+					{
+						quantidadeProcessos: "33 processos",
+						categoria: "Cívil",
+					},
+					{
+						quantidadeProcessos: "150 processos",
+						categoria: "Criminal",
+					},
+					{
+						quantidadeProcessos: "40 processos",
+						categoria: "Criminal",
+					},
+				],
+				distribuidos: [
+					{
+						processos: "33 processos",
+						categoria: "Cívil",
+					},
+					{
+						processos: "21 processos",
+						categoria: "Família",
+					},
+					{
+						processos: "43 processos",
+						categoria: "Criminal",
+					},
+					{
+						processos: "33 processos",
+						categoria: "Cívil",
+					},
+				],
+			};
+		},
 		name: "HomeView",
 		components: {
 			HeaderComponent,
@@ -130,10 +119,10 @@
 		font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 400;
 		max-height: 100vh;
-		.limiter{
+		.limiter {
 			margin: 0 0 20px;
-			.itens{
-				.title{
+			.itens {
+				.title {
 					font-weight: 600;
 					margin: 0 0 5px;
 				}
@@ -144,10 +133,10 @@
 				font-weight: 600;
 				margin: 0 0 11px;
 			}
-			.list{
+			.list {
 				overflow-y: auto;
 				max-height: 28vh;
-				.itens{
+				.itens {
 					width: 100%;
 					position: relative;
 					margin: 0;
