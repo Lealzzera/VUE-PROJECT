@@ -28,6 +28,26 @@
 									<div class="col-6 process">50 processos</div>
 									<div class="col-6 category">Cível</div>
 								</div>
+
+								<div class="row itens">
+									<div class="col-6 process">50 processos</div>
+									<div class="col-6 category">Família</div>
+								</div>
+
+								<div class="row itens">
+									<div class="col-6 process">50 processos</div>
+									<div class="col-6 category">Cível</div>
+								</div>
+
+								<div class="row itens">
+									<div class="col-6 process">50 processos</div>
+									<div class="col-6 category">Família</div>
+								</div>
+
+								<div class="row itens">
+									<div class="col-6 process">50 processos</div>
+									<div class="col-6 category">Cível</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -106,7 +126,7 @@
 
 <style scoped lang="less">
 	main {
-		padding-top: 120px;
+		padding-top: 100px;
 		padding-left: 32px;
 		font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 400;
@@ -127,7 +147,7 @@
 			}
 			.list{
 				overflow-y: auto;
-				max-height: 30vh;
+				max-height: 28vh;
 				.itens{
 					width: 100%;
 					position: relative;
