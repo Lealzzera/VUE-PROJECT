@@ -9,7 +9,10 @@
 				<div class="col-1"></div>
 				<div class="col-1">
 					<button class="engrenagem">
-						<img src="@/assets/engrenagem-icon.svg" alt="engrenagem" />
+						<img
+							src="@/assets/engrenagem-icon.svg"
+							alt="engrenagem"
+						/>
 					</button>
 				</div>
 			</div>
@@ -17,16 +20,17 @@
 	</header>
 </template>
 <script>
-import InputComponent from '@/components/InputComponent/InputComponent.vue';
+	import InputComponent from "@/components/InputComponent/InputComponent.vue";
 	export default {
 		name: "HeaderComponent",
-        components: {
-            InputComponent
-        }
+		components: {
+			InputComponent,
+		},
 	};
 </script>
 <style scoped lang="less">
 	header {
+		z-index: 99;
 		background: #dadac5;
 		position: absolute;
 		top: 0;
@@ -34,21 +38,20 @@ import InputComponent from '@/components/InputComponent/InputComponent.vue';
 		height: 64px;
 		width: 100%;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-size: 14px;
-		.container{
+		.container {
 			padding-top: 16px;
 			padding-bottom: 16px;
-			span{
-				font-size: 14px;
+			span {
+				font-size: 16px;
 				line-height: 33px;
 				display: block;
 			}
-			.col-1{
+			.col-1 {
 				text-align: right;
 				padding: 5px 0;
 			}
 		}
 	}
 
-  @import'~bootstrap/dist/css/bootstrap.css';
+	@import "~bootstrap/dist/css/bootstrap.css";
 </style>

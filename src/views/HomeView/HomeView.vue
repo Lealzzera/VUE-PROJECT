@@ -11,14 +11,16 @@
 							<div class="list">
 								<div
 									class="row itens"
-									v-for="(processo, key) in processos"
+									v-for="(
+										{ quantidadeProcessos, categoria }, key
+									) in processos"
 									:key="key"
 								>
 									<div class="col-6 process">
-										{{ processo.quantidadeProcessos }}
+										{{ quantidadeProcessos }}
 									</div>
 									<div class="col-6 category">
-										{{ processo.categoria }}
+										{{ categoria }}
 									</div>
 								</div>
 							</div>
@@ -37,14 +39,16 @@
 							<div class="list">
 								<div
 									class="row itens"
-									v-for="(processo, key) in distribuidos"
+									v-for="(
+										{ processos, categoria }, key
+									) in distribuidos"
 									:key="key"
 								>
 									<div class="col-4 process">
-										{{ processo.processos }}
+										{{ processos }}
 									</div>
 									<div class="col-4 category">
-										{{ processo.categoria }}
+										{{ categoria }}
 									</div>
 									<div class="col-3"></div>
 									<div class="col-1"></div>
@@ -132,7 +136,9 @@
 				font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 				font-size: 24px;
 				font-weight: 600;
-				margin: 0 0 11px;
+				margin: 0 0 20px;
+				padding: 0 0 15px;
+				border-bottom: 2px solid #cecece;
 			}
 			.list {
 				overflow-y: auto;
@@ -142,7 +148,11 @@
 					position: relative;
 					margin: 0;
 					border-bottom: 1px solid #cecece;
-					padding: 4px 0;
+					padding: 10px 0;
+					.category,
+					.process {
+						font-weight: bold;
+					}
 				}
 			}
 		}
