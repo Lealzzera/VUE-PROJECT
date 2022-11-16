@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="input_content">
 		<input type="text" class="input-text" />
 		<button>
 			<img src="@/assets/lupa-icon.svg" alt="" />
@@ -12,7 +12,7 @@
 	};
 </script>
 
-<style scoped>
+<style>
 	.input-text {
 		padding: 8px 13px;
 		width: 246px;
