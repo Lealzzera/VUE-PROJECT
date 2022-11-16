@@ -1,43 +1,65 @@
 <template>
-    <div>
-        <HeaderComponent />
+	<div>
+		<HeaderComponent />
 
-        <main class="view">
+		<main class="view">
 			<div class="container">
 				<div class="row">
 					<div class="col-6">
 						<h2>Distribuição de Processos</h2>
-                        <form>
-                            <div class="form-group">
-                                <p class="title">Selecione a área</p>
-                                <div class="check_group">
-                                    <input type="checkbox" name="civel" id="civel">
-                                    <i class="fa-solid fa-square-check"></i>
-                                    <label for="civel">Cível</label>
-                                </div>
+						<form>
+							<div class="form-group">
+								<p class="title">Selecione a área</p>
 
-                                <div class="check_group">
-                                    <input type="checkbox" name="criminal" id="criminal">
-                                    <i class="fa-solid fa-square-check"></i>
-                                    <label for="criminal">Criminal</label>
-                                </div>
+								<!-- TODO: AJUSTAR OS CHECKBOX POIS ESTÃO BUGADOS AO DESELECIONAR A OPÇÃO -->
+								<div class="check_group">
+									<input
+										type="checkbox"
+										name="civel"
+										id="civel"
+									/>
+									<i class="fa-solid fa-square-check"></i>
+									<label for="civel">Cível</label>
+								</div>
 
-                                <div class="check_group">
-                                    <input type="checkbox" name="familia" id="familia">
-                                    <i class="fa-solid fa-square-check"></i>
-                                    <label for="familia">Familia</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p class="title">Limitar orgão julgador</p>
-                                <select name="distribuicao" id="distribution">
-                                    <option value="valor1">Valor 1</option>
-                                    <option value="valor2" selected>Valor 2</option>
-                                    <option value="valor3">Valor 3</option>
-                                </select>
-                            </div>
-                            <button class="limiter-save">Distribuição concluída</button>
-                        </form>
+								<div class="check_group">
+									<input
+										type="checkbox"
+										name="criminal"
+										id="criminal"
+									/>
+									<i class="fa-solid fa-square-check"></i>
+									<label for="criminal">Criminal</label>
+								</div>
+
+								<div class="check_group">
+									<input
+										type="checkbox"
+										name="familia"
+										id="familia"
+									/>
+									<i class="fa-solid fa-square-check"></i>
+									<label for="familia">Familia</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<p class="title">Limitar orgão julgador</p>
+								<select name="distribuicao" id="distribution">
+									<option value="valor1">Valor 1</option>
+									<option value="valor2" selected>
+										Valor 2
+									</option>
+									<option value="valor3">Valor 3</option>
+								</select>
+							</div>
+							<p>
+								{{ processos.length }} processos pendentes de
+								distribuição
+							</p>
+							<button class="limiter-save">
+								Distribuir processos
+							</button>
+						</form>
 					</div>
 
 					<div class="col-6">
@@ -48,30 +70,44 @@
 						</div>
 
 						<div class="list">
-							<div class="row itens" v-for="(processo, index) in processos" :key="index">
-								<div class="col-4 process">{{ processo.quantidade }}</div>
-								<div class="col-4 classification">{{ processo.categoria }}</div>
+							<div
+								class="row itens"
+								v-for="(processo, index) in processos"
+								:key="index"
+							>
+								<div class="col-4 process">
+									{{ processo.quantidade }}
+								</div>
+								<div class="col-4 classification">
+									{{ processo.categoria }}
+								</div>
 								<div class="col-2"></div>
-								<div class="col-1 delete">del</div>
-								<div class="col-1 edit">edit</div>
+								<div class="col-1 delete">
+									<button>
+										<i class="fa-solid fa-trash"></i>
+									</button>
+								</div>
+								<div class="col-1 edit">
+									<button>
+										<i class="fa-solid fa-pen"></i>
+									</button>
+								</div>
 							</div>
 						</div>
-
-						
 					</div>
 				</div>
 			</div>
 		</main>
-    </div>
+	</div>
 </template>
 <script>
-import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue'
-    export default {
-        name: 'DistributeView',
-        components: {
-            HeaderComponent
-        },
-        data() {
+	import HeaderComponent from "@/components/HeaderComponent/HeaderComponent.vue";
+	export default {
+		name: "DistributeView",
+		components: {
+			HeaderComponent,
+		},
+		data() {
 			return {
 				processos: [
 					{
@@ -88,8 +124,8 @@ import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue'
 					},
 				],
 			};
-		}
-    }
+		},
+	};
 </script>
 
 <style scoped lang="less">
@@ -104,16 +140,16 @@ import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue'
 			font-weight: 600;
 			margin: 0 0 11px;
 		}
-		.itens{
-			.title{
+		.itens {
+			.title {
 				font-weight: 600;
 				margin: 0 0 5px;
 			}
 		}
-		.list{
+		.list {
 			overflow-y: auto;
-			max-height:60vh;
-			.itens{
+			max-height: 60vh;
+			.itens {
 				width: 100%;
 				position: relative;
 				margin: 0;
@@ -122,57 +158,55 @@ import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue'
 				font-size: 15px;
 			}
 		}
-        .form-group{
-            margin: 0 0 20px;
-            .check_group{
-                display: inline-block;
-                position: relative;
-                i{
-                    display: none;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    font-size: 20px;
-                    color: #8bc97b;
-                    z-index: 9;
-                }
-                input[type="checkbox"]{
-                    width: 18px;
-                    height: 18px;
-                    z-index: 999;
-                    cursor: pointer;
-                    &:checked{
-                        opacity: 0;
-                        z-index: 999;
-                        ~i{
-                            display: block;
-                        }
-                    }
-                }
-            }
-            select{
-                width: 100%;
-                border-radius: 3px;
-                padding: 6px;
-                border: 1px solid #a5a5a5;
-            }
-            label{
-                margin: 0 20px 0 5px;
-                line-height: 14px;
-                top: -2px;
-                position: relative;
-            }
-            .title{
-                margin: 0 0 10px;
-                &:before{
-                    content: "*";
-                    color: red;
-                }
-            }
-        }
+		.form-group {
+			margin: 0 0 20px;
+			.check_group {
+				display: inline-block;
+				position: relative;
+				i {
+					display: none;
+					position: absolute;
+					top: 0;
+					left: 0;
+					font-size: 20px;
+					color: #8bc97b;
+					z-index: 9;
+				}
+				input[type="checkbox"] {
+					width: 18px;
+					height: 18px;
+					z-index: 999;
+					cursor: pointer;
+					&:checked {
+						opacity: 0;
+						z-index: 999;
+						~ i {
+							display: block;
+						}
+					}
+				}
+			}
+			select {
+				width: 100%;
+				border-radius: 3px;
+				padding: 6px;
+				border: 1px solid #a5a5a5;
+			}
+			label {
+				margin: 0 20px 0 5px;
+				line-height: 14px;
+				top: -2px;
+				position: relative;
+			}
+			.title {
+				margin: 0 0 10px;
+				&:before {
+					content: "*";
+					color: red;
+				}
+			}
+		}
 	}
-
-	
 
 	.distribution-inputs input {
 		padding: 0px 0px 0px 8px;
@@ -188,7 +222,7 @@ import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue'
 		flex-direction: row;
 	}
 
-    .limiter-save {
+	.limiter-save {
 		margin-top: 10px;
 		width: 100%;
 		height: 40px;
@@ -196,6 +230,4 @@ import HeaderComponent from '@/components/HeaderComponent/HeaderComponent.vue'
 		padding: 8px 20px;
 		color: #fff;
 	}
-
-	
 </style>

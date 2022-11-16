@@ -17,7 +17,9 @@
 						</div>
 						<div class="distribution-cut">
 							<p class="title-cut">Corte e distribuição</p>
-							<p class="advise">Favor preencher apenas uma opção</p>
+							<p class="advise">
+								Favor preencher apenas uma opção
+							</p>
 							<div class="distribution-inputs">
 								<input type="text" />
 								<p>% da média mensal</p>
@@ -26,7 +28,9 @@
 								<input type="text" />
 								<p>Número de processos</p>
 							</div>
-							<button class="limiter-save">Salvar Limitador</button>
+							<button class="limiter-save">
+								Salvar Limitador
+							</button>
 						</div>
 					</div>
 
@@ -38,16 +42,30 @@
 						</div>
 
 						<div class="list">
-							<div class="row itens" v-for="(processo, index) in processos" :key="index">
-								<div class="col-4">{{ processo.quantidade }}</div>
-								<div class="col-4">{{ processo.categoria }}</div>
+							<div
+								class="row itens"
+								v-for="(processo, index) in processos"
+								:key="index"
+							>
+								<div class="col-4">
+									{{ processo.quantidade }}
+								</div>
+								<div class="col-4">
+									{{ processo.categoria }}
+								</div>
 								<div class="col-2"></div>
-								<div class="col-1">del</div>
-								<div class="col-1">edit</div>
+								<div class="col-1">
+									<button>
+										<i class="fa-solid fa-trash"></i>
+									</button>
+								</div>
+								<div class="col-1">
+									<button>
+										<i class="fa-solid fa-pen"></i>
+									</button>
+								</div>
 							</div>
 						</div>
-
-						
 					</div>
 				</div>
 			</div>
@@ -93,16 +111,16 @@
 			font-weight: 600;
 			margin: 0 0 11px;
 		}
-		.itens{
-			.title{
+		.itens {
+			.title {
 				font-weight: 600;
 				margin: 0 0 5px;
 			}
 		}
-		.list{
+		.list {
 			overflow-y: auto;
-			max-height:60vh;
-			.itens{
+			max-height: 60vh;
+			.itens {
 				width: 100%;
 				position: relative;
 				margin: 0;
@@ -112,7 +130,6 @@
 			}
 		}
 	}
-
 
 	.title-area:before,
 	.title-cut:before {
