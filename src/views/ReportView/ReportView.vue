@@ -145,10 +145,13 @@
 
 		.list {
 			overflow-y: auto;
-			max-height: 65vh;
+			max-height: 60vh;
 			.row-itens {
 				border-bottom: 2px solid #cecece;
 				padding: 45px 0;
+                position: relative;
+                width: 100%;
+                margin: 0;
 			}
 		}
 	}
