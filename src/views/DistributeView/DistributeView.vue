@@ -10,6 +10,8 @@
 						<form>
 							<div class="form-group">
 								<p class="title">Selecione a área</p>
+
+								<!-- TODO: AJUSTAR OS CHECKBOX POIS ESTÃO BUGADOS AO DESELECIONAR A OPÇÃO -->
 								<div class="check_group">
 									<input
 										type="checkbox"
@@ -50,8 +52,12 @@
 									<option value="valor3">Valor 3</option>
 								</select>
 							</div>
+							<p>
+								{{ processos.length }} processos pendentes de
+								distribuição
+							</p>
 							<button class="limiter-save">
-								Distribuição concluída
+								Distribuir processos
 							</button>
 						</form>
 					</div>
