@@ -12,7 +12,7 @@
 	};
 </script>
 
-<style>
+<style scoped>
 	.input-text {
 		padding: 8px 13px;
 		width: 246px;
