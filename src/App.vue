@@ -23,14 +23,15 @@ export default {
     margin: 0px;
   }
 
+  .container{
+    max-width: 83% !important;
+  }
+
   .view{
     position: relative;
     display: block;
     float: left;
     width: 100%;
-    .container{
-      max-width: 1040px !important;
-    }
   }
 
   ul {
