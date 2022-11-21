@@ -132,7 +132,7 @@
 		methods: {
 			openModal(){
 				this.modal = true
-			}
+			},
 		}
 	};
 </script>
@@ -185,6 +185,7 @@
 					width: 18px;
 					height: 18px;
 					z-index: 999;
+					position: absolute;
 					cursor: pointer;
 					&:checked {
 						opacity: 0;
@@ -202,7 +203,7 @@
 				border: 1px solid #a5a5a5;
 			}
 			label {
-				margin: 0 20px 0 5px;
+				margin: 0 20px 0 25px;
 				line-height: 14px;
 				top: -2px;
 				position: relative;
@@ -241,5 +242,6 @@
 	}
 	.open_modal{
 		cursor: pointer;
+		text-decoration: none;
 	}
 </style>

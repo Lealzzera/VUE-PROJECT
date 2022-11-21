@@ -2,7 +2,7 @@
 	<div class="modal_process">
         <div class="box">
             <div class="container">
-                <div class="close" @click="closeModal()">x</div>
+                <div class="close" @click="$emit('open', false)">x</div>
                 <div class="title">Distribuição de processos</div>
                 
                 <div class="row search">
@@ -37,7 +37,6 @@
         props: ['open'],
         data () {
             return{
-                stateModal: this.open,
                 processos: [
 					{
 						numero: "983491384613460183",
@@ -67,13 +66,6 @@
 				],
             }
         },
-        methods: {
-            closeModal(){
-                console.log(this.stateModal)
-                this.$emit(false)
-            }
-        }
-
 	};
 </script>
 <style scoped lang="less">
