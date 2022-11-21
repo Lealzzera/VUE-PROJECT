@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<HeaderComponent />
+		<ModalProcess v-if="modal" :open="modal" />
 
 		<main class="view">
 			<div class="container">
@@ -53,7 +54,7 @@
 								</select>
 							</div>
 							<p>
-								{{ processos.length }} processos pendentes de
+								<a @click="openModal()" class="open_modal">{{ processos.length }} processos</a> pendentes de
 								distribuição
 							</p>
 							<button class="limiter-save">
@@ -102,13 +103,16 @@
 </template>
 <script>
 	import HeaderComponent from "@/components/HeaderComponent/HeaderComponent.vue";
+	import ModalProcess from "@/components/modalProcess/modalProcess.vue";
 	export default {
 		name: "DistributeView",
 		components: {
 			HeaderComponent,
+			ModalProcess,
 		},
 		data() {
 			return {
+				modal: false,
 				processos: [
 					{
 						quantidade: "Limitador 01",
@@ -125,6 +129,11 @@
 				],
 			};
 		},
+		methods: {
+			openModal(){
+				this.modal = true
+			},
+		}
 	};
 </script>
 
@@ -176,6 +185,7 @@
 					width: 18px;
 					height: 18px;
 					z-index: 999;
+					position: absolute;
 					cursor: pointer;
 					&:checked {
 						opacity: 0;
@@ -193,7 +203,7 @@
 				border: 1px solid #a5a5a5;
 			}
 			label {
-				margin: 0 20px 0 5px;
+				margin: 0 20px 0 25px;
 				line-height: 14px;
 				top: -2px;
 				position: relative;
@@ -229,5 +239,9 @@
 		background: #333333;
 		padding: 8px 20px;
 		color: #fff;
+	}
+	.open_modal{
+		cursor: pointer;
+		text-decoration: none;
 	}
 </style>
