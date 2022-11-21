@@ -2,30 +2,19 @@
 	<header>
 		<div class="container">
 			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-3"><span>Seja bem-vindo ao SISCONT</span></div>
-				<div class="col-3"><InputComponent /></div>
-				<div class="col-3"></div>
-				<div class="col-1"></div>
-				<div class="col-1">
-					<button class="engrenagem">
-						<img
-							src="@/assets/engrenagem-icon.svg"
-							alt="engrenagem"
-						/>
-					</button>
+				<div class="col-3">
+					<span v-if="!isHome">Seja bem-vindo ao SISCONT</span>
+					<button v-if="isHome">Importar Processos</button>
 				</div>
+				<div class="col-9"></div>
 			</div>
 		</div>
 	</header>
 </template>
 <script>
-	import InputComponent from "@/components/InputComponent/InputComponent.vue";
 	export default {
 		name: "HeaderComponent",
-		components: {
-			InputComponent,
-		},
+		props: ["isHome"],
 	};
 </script>
 <style scoped lang="less">
@@ -51,6 +40,14 @@
 				padding: 5px 0;
 			}
 		}
+	}
+
+	button {
+		width: 184px;
+		height: 36px;
+		background: #333333;
+		color: #fff;
+		gap: 8px;
 	}
 
 	@import "~bootstrap/dist/css/bootstrap.css";
