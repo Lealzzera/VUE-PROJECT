@@ -1,7 +1,6 @@
 <template>
 	<section>
 		<HeaderComponent />
-
 		<main class="view">
 			<div class="container">
 				<div class="row">
@@ -16,7 +15,7 @@
 							</select>
 						</div>
 						<div class="distribution-cut">
-							<p class="title-cut">Corte e distribuição</p>
+							<p class="title-cut">Corte De distribuição</p>
 							<p class="advise">
 								Favor preencher apenas uma opção
 							</p>
@@ -37,8 +36,8 @@
 					<div class="col-6">
 						<h2>Limitadores em uso</h2>
 						<div class="row itens">
-							<div class="col-4 title">Nome</div>
-							<div class="col-4 title">Vara/Grupo</div>
+							<div class="col-6 title">Corte De distribuição</div>
+							<div class="col-6 title">Área de distribuição</div>
 						</div>
 
 						<div class="list">
@@ -47,22 +46,11 @@
 								v-for="(processo, index) in processos"
 								:key="index"
 							>
-								<div class="col-4">
+								<div class="col-6 proccess-quantity">
 									{{ processo.quantidade }}
 								</div>
-								<div class="col-4">
+								<div class="col-6 proccess-area">
 									{{ processo.categoria }}
-								</div>
-								<div class="col-2"></div>
-								<div class="col-1">
-									<button>
-										<i class="fa-solid fa-trash"></i>
-									</button>
-								</div>
-								<div class="col-1">
-									<button>
-										<i class="fa-solid fa-pen"></i>
-									</button>
 								</div>
 							</div>
 						</div>
@@ -127,6 +115,14 @@
 				border-bottom: 1px solid #cecece;
 				padding: 10px 0;
 				font-size: 15px;
+
+				.proccess-quantity {
+					color: #266b9e;
+				}
+
+				.proccess-area {
+					font-weight: bold;
+				}
 			}
 		}
 	}
