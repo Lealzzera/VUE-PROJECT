@@ -20,12 +20,19 @@
 							<p class="advise">
 								Favor preencher apenas uma opção
 							</p>
+
 							<div class="distribution-inputs">
-								<input type="text" />
+								<input class="radio" type="radio" />
+								<p class="label_no_limiter">Sem limitador</p>
+							</div>
+							<div class="distribution-inputs">
+								<input class="radio" type="radio" />
+								<input class="type_text" type="text" />
 								<p>% da média mensal</p>
 							</div>
 							<div class="distribution-inputs">
-								<input type="text" />
+								<input class="radio" type="radio" />
+								<input class="type_text" type="text" />
 								<p>Número de processos</p>
 							</div>
 							<button class="limiter-save">
@@ -149,13 +156,25 @@
 		margin-top: 10px;
 	}
 
-	.distribution-inputs input {
-		padding: 0px 0px 0px 8px;
-		margin-right: 20px;
-		margin-bottom: 12px;
-		width: 48px;
-		height: 24px;
-		border: 1px solid #afafaf;
+	.distribution-inputs{
+		.type_text{
+			padding: 0px 0px 0px 8px;
+			margin-right: 20px;
+			margin-bottom: 12px;
+			width: 48px;
+			height: 24px;
+			border: 1px solid #afafaf;
+		}
+		.radio{
+			display: inline-block;
+			margin: 0 12px 0 0;
+			top: -5px;
+			position: relative;
+		}
+		.label_no_limiter{
+			position: relative;
+			top: -6px;
+		}
 	}
 
 	.distribution-inputs {
