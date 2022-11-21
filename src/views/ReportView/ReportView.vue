@@ -40,11 +40,13 @@
 						) in processos"
 						:key="key"
 					>
-						<div class="col-3">{{ classificacao }}</div>
+						<div class="col-3 classification">
+							{{ classificacao }}
+						</div>
 						<div class="col-2">{{ intimacoes }}</div>
 						<div class="col-2">{{ pareceres }}</div>
 						<div class="col-3">{{ retornos }}</div>
-						<div class="col-2">{{ saldo }}</div>
+						<div class="col-2 balance">{{ saldo }}</div>
 					</div>
 				</div>
 			</div>
@@ -149,9 +151,18 @@
 			.row-itens {
 				border-bottom: 2px solid #cecece;
 				padding: 45px 0;
-                position: relative;
-                width: 100%;
-                margin: 0;
+				position: relative;
+				width: 100%;
+				margin: 0;
+
+				.classification,
+				.balance {
+					color: #266b9e;
+				}
+
+				.balance {
+					font-weight: bold;
+				}
 			}
 		}
 	}

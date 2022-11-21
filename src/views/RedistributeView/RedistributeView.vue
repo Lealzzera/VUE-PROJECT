@@ -74,7 +74,7 @@
 					<div class="col-12">
 						<div class="row itens">
 							<div class="col-1"></div>
-							<div class="col-3 title">Número</div>
+							<div class="col-3 title number">Número</div>
 							<div class="col-3 title">Área</div>
 							<div class="col-3 title">Orgão julgador</div>
 						</div>
@@ -184,6 +184,10 @@
 			.title {
 				font-weight: 600;
 				margin: 0 0 5px;
+			}
+
+			.number {
+				color: #266b9e;
 			}
 		}
 		.row.button {

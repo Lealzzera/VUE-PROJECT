@@ -1,7 +1,6 @@
 <template>
 	<section>
-		<HeaderComponent />
-
+		<HeaderComponent :isHome="true" />
 		<main class="view">
 			<div class="container">
 				<div class="row">
@@ -48,15 +47,6 @@
 									</div>
 									<div class="col-4 category">
 										{{ categoria }}
-									</div>
-
-									<div class="col-3"></div>
-									<div class="col-1">
-										<button>
-											<i
-												class="fa-solid fa-magnifying-glass"
-											></i>
-										</button>
 									</div>
 								</div>
 							</div>
@@ -154,9 +144,11 @@
 					margin: 0;
 					border-bottom: 1px solid #cecece;
 					padding: 10px 0;
-					.category,
-					.process {
+					.category {
 						font-weight: bold;
+					}
+					.process {
+						color: #266b9e;
 					}
 				}
 			}
