@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<HeaderComponent />
-		<ModalProcess v-if="modal" :open="modal" />
+		<ModalProcess v-if="modal" @open="modal = false" />
 
 		<main class="view">
 			<div class="container">
@@ -54,7 +54,7 @@
 								</select>
 							</div>
 							<p>
-								<a @click="openModal()" class="open_modal">{{ processos.length }} processos</a> pendentes de
+								<a @click="stateModal()" class="open_modal">{{ processos.length }} processos</a> pendentes de
 								distribuição
 							</p>
 							<button class="limiter-save">
@@ -130,7 +130,7 @@
 			};
 		},
 		methods: {
-			openModal(){
+			stateModal(){
 				this.modal = true
 			},
 		}
