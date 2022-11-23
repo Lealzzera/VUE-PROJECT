@@ -73,7 +73,17 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="row itens">
-							<div class="col-1"></div>
+							<div class="col-1">
+								<div class="check_group">
+									<input
+										type="checkbox"
+										name="criminal"
+										id="criminal"
+										@click="check(-1, 'all')"
+									/>
+									<i v-if="checked" class="fa-solid fa-square-check"></i>
+								</div>
+							</div>
 							<div class="col-3 title number">Número</div>
 							<div class="col-3 title">Área</div>
 							<div class="col-3 title">Orgão julgador</div>
@@ -84,7 +94,17 @@
 								v-for="(processo, index) in processos"
 								:key="index"
 							>
-								<div class="col-1"></div>
+								<div class="col-1">
+									<div class="check_group">
+										<input
+											type="checkbox"
+											name="criminal"
+											id="criminal"
+											@click="check(index, 'item')"
+										/>
+										<i v-if="checked" class="fa-solid fa-square-check"></i>
+									</div>
+								</div>
 								<div class="col-3 number">
 									{{ processo.numero }}
 								</div>
@@ -116,46 +136,55 @@
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 					{
 						numero: "123456789",
 						area: "Limitador 01",
 						orgao: "Cível",
+						checked: false
 					},
 				],
 			};
@@ -181,6 +210,40 @@
 		.itens {
 			border-bottom: 1px solid #cecece;
 			padding: 10px 0;
+			margin: 0;
+			.check_group {
+				display: inline-block;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				i {
+					display: none;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					font-size: 20px;
+					color: #8bc97b;
+					z-index: 9;
+				}
+				input[type="checkbox"] {
+					width: 18px;
+					height: 18px;
+					z-index: 999;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					cursor: pointer;
+					&:checked {
+						opacity: 0;
+						z-index: 999;
+						~ i {
+							display: block;
+						}
+					}
+				}
+			}
 			.title {
 				font-weight: 600;
 				margin: 0 0 5px;
